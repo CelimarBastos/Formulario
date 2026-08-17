@@ -1,118 +1,93 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  min-height: 100%;
   font-family: Arial, sans-serif;
+  background: #f3f3f3;
+  overflow-x: hidden;
+}
+
+body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  animation: backgroundShift 15s ease infinite;
-}
-
-@keyframes backgroundShift {
-  0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-  50% { background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); }
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
 }
 
 .form-container {
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  background: url('fundo.JPG') no-repeat center center;
-  background-size: cover;
-  background-color: white;
-  animation: slideIn 0.6s ease-out;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  width: min(100vw, 900px);
+  aspect-ratio: 1240 / 1755;
+  background: url('fundo.JPG') no-repeat center top / 100% 100%;
+  background-color: #fff;
 }
 
 .campo {
   position: absolute;
-  transform: translate(-50%, -50%);
-  font-size: 8px;
-  padding: 4px 8px;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
   background: transparent;
   border: none;
-  color: black;
-  transition: all 0.3s ease;
+  color: #000;
+  opacity: 0.9;
   font-family: Arial, sans-serif;
+  transform: none;
+  box-sizing: border-box;
 }
 
 .campo:focus {
+  opacity: 1;
   outline: none;
-  box-shadow: 0 0 5px rgba(46, 139, 87, 0.5);
-  transform: translate(-50%, -50%) scale(1.05);
 }
 
 input[type="checkbox"], input[type="radio"] {
+  position: absolute;
+  margin: 0;
+  padding: 0;
   background: transparent;
   accent-color: #060e09;
-  width: 9px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
+  transform: none;
 }
 
-#cliente {
-  top: 21%; left: 85%; width: 40%;
-}
+#cidade { top: 89.8%; left: 17.5%; width: 16%; }
+#dia { top: 89.8%; left: 35.0%; width: 5%; }
+#mes { top: 89.8%; left: 48.5%; width: 15%; }
+#ano { top: 89.8%; left: 65.8%; width: 8%; }
+#cliente { top: 18.8%; left: 74.0%; width: 28%; }
+#cpf { top: 21.2%; left: 72.5%; width: 30%; }
 
-#cpf {
-  top: 20%; left: 85%; width: 35%;
-}
+#tv { top: 22.0%; left: 20.0%; }
+#ponto { top: 22.0%; left: 35.5%; }
+#internet { top: 22.0%; left: 52.5%; }
+#telefonia { top: 22.0%; left: 68.0%; }
 
-#dia { top: 88.6%; left: 42%; width: 4%; }
-#mes { top: 88.6%; left: 57%; width: 12%; }
-#ano { top: 88.6%; left: 73%; width: 6%; }
-#cidade { top: 88.6%; left: 32%; width: 13%; }
+#onu { top: 31.0%; left: 47.0%; width: 41%; }
+#receptor { top: 35.0%; left: 53.0%; width: 38%; }
+#roteador { top: 39.1%; left: 52.5%; width: 39%; }
+#telefone { top: 43.0%; left: 52.8%; width: 38%; }
 
-#tv { top: 29%; left: 25%; }
-#ponto { top: 29%; left: 42%; }
-#internet { top: 29%; left: 61%; }
-#telefonia { top: 29%; left: 71%; }
+#onu_check { top: 31.0%; left: 38.5%; }
+#receptor_check { top: 35.0%; left: 38.5%; }
+#roteador_check { top: 39.1%; left: 38.5%; }
+#telefone_check { top: 43.0%; left: 38.5%; }
 
-#onu { top: 37.3%; left: 50%; width: 40%; }
-#receptor { top: 41%; left: 55%; width: 40%; }
-#roteador { top: 45%; left: 55%; width: 40%; }
-#telefone { top: 48%; left: 55%; width: 40%; }
+#kit_sim { top: 45.6%; left: 31.2%; }
+#kit_nao { top: 45.6%; left: 40.5%; }
+#obs_kit { top: 48.5%; left: 50.0%; width: 57%; }
 
-#onu_check { top: 37.3%; left: 50%; }
-#receptor_check { top: 41%; left: 50%; }
-#roteador_check { top: 45%; left: 50%; }
-#telefone_check { top: 48%; left: 50%; }
+#estado_sim { top: 53.9%; left: 60.0%; }
+#estado_nao { top: 53.9%; left: 69.7%; }
+#obs_estado { top: 58.0%; left: 53.0%; width: 60%; }
 
-#kit_sim { top: 51%; left: 40%; }
-#kit_nao { top: 51%; left: 47%; }
-#obs_kit { top: 53.6%; left: 53%; width: 60%; }
-
-#estado_sim { top: 58.8%; left: 66%; }
-#estado_nao { top: 58.8%; left: 74%; }
-#obs_estado { top: 62%; left: 52%; width: 60%; }
-
-#protocolo { top: 70.3%; left: 50%; width: 20%; }
-#tecnico { top: 74.7%; left: 60%; width: 50%; }
-#responsavel { top: 79%; left: 50%; width: 50%; }
-#parentesco { top: 83.3%; left: 50%; width: 50%; }
+#protocolo { top: 64.5%; left: 46.0%; width: 22%; }
+#tecnico { top: 69.2%; left: 59.0%; width: 46%; }
+#responsavel { top: 74.0%; left: 50.0%; width: 52%; }
+#parentesco { top: 79.0%; left: 51.0%; width: 49%; }
 
 .actions {
   position: fixed;
@@ -120,26 +95,12 @@ input[type="checkbox"], input[type="radio"] {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  animation: fadeIn 0.8s ease-out 0.3s both;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  z-index: 1000;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  z-index: 10;
 }
 
 button {
   padding: 12px 30px;
+  margin: 5px;
   font-size: 16px;
   font-weight: bold;
   background: linear-gradient(135deg, #2E8B57 0%, #246b45 100%);
@@ -149,17 +110,40 @@ button {
   border-radius: 50px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
-  display: inline-block;
-  white-space: nowrap;
 }
 
 button:hover {
   background: linear-gradient(135deg, #246b45 0%, #1a4d32 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(46, 139, 87, 0.5);
+  transform: translateY(-2px);
 }
 
-button:active {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 10px rgba(46, 139, 87, 0.3);
+@media (max-width: 768px) {
+  .form-container {
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  .campo {
+    font-size: 7px;
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    width: 12px;
+    height: 12px;
+  }
+
+  .actions {
+    bottom: 12px;
+    width: 100%;
+    left: 0;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
 }

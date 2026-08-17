@@ -2,41 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Ordem de Serviço - Brisanet</title>
-  <style>
-    body { margin: 0; padding: 0; font-family: Arial, sans-serif; display: flex; justify-content: center; background: #f0f0f0; }
-    .form-container { position: relative; width: 100%; max-width: 900px; aspect-ratio: 8/11; background: url('https://raw.githubusercontent.com/CelimarBastos/formulario/main/fundo.JPG') no-repeat center top; background-size: contain; }
-    .campo { position: absolute; transform: translate(-50%, -50%); font-size: 9px; padding: 2px; background: transparent; border: none; color: black; opacity: 0.7; }
-    .campo:focus { opacity: 1; outline: none; }
-    input[type="checkbox"], input[type="radio"] { background: transparent; accent-color: #060e09; width: 9px; height: 20px; }
-    #cliente { top: 21%; left: 85%; width: 40%; }
-    #cpf { top: 23.7%; left: 85%; width: 28%; }
-    #dia { top: 88.6%; left: 42%; width: 4%; }
-    #mes { top: 88.6%; left: 57%; width: 12%; }
-    #ano { top: 88.6%; left: 73%; width: 6%; }
-    #cidade { top: 88.6%; left: 32%; width: 13%; }
-    #tv { top: 29%; left: 25%; }
-    #ponto { top: 29%; left: 42%; }
-    #internet { top: 29%; left: 61%; }
-    #telefonia { top: 29%; left: 71%; }
-    #onu { top: 37.3%; left: 50%; width: 40%; }
-    #receptor { top: 41%; left: 55%; width: 40%; }
-    #roteador { top: 45%; left: 55%; width: 40%; }
-    #telefone { top: 48%; left: 55%; width: 40%; }
-    #kit_sim { top: 51%; left: 40%; }
-    #kit_nao { top: 51%; left: 47%; }
-    #obs_kit { top: 53.6%; left: 53%; width: 60%; }
-    #estado_sim { top: 58.8%; left: 66%; }
-    #estado_nao { top: 58.8%; left: 74%; }
-    #obs_estado { top: 62%; left: 52%; width: 60%; }
-    #protocolo { top: 70.3%; left: 50%; width: 20%; }
-    #tecnico { top: 74.7%; left: 60%; width: 50%; }
-    #responsavel { top: 79%; left: 50%; width: 50%; }
-    #parentesco { top: 83.3%; left: 50%; width: 50%; }
-    .actions { margin-top: 20px; text-align: center; }
-    button { padding: 10px 20px; margin: 5px; font-size: 16px; background: #2E8B57; color: white; border: none; cursor: pointer; border-radius: 5px; }
-    button:hover { background: #246b45; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="form-container" id="formulario">
